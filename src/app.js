@@ -35,7 +35,7 @@ app.use('/api/manager', ManagerRoute)
 app.use('/api/super-admin', SuperAdminRoute)
 
 
-app.use('/callLogFile', express.static('callLogFile'))
+// app.use('/callLogFile', express.static('callLogFile'))
 
 app.use((err, req, res, next) => {
   console.error(err)
