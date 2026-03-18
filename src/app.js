@@ -9,6 +9,10 @@ import loginRoute from './routes/Authentication/login.route.js'
 import AdminRoute from './routes/Admin/admin.route.js'
 import SuperAdminRoute from './routes/super-admin/super-admin.routes.js'
 import ManagerRoute from './routes/Manager/manager.route.js'
+
+import os from 'os';
+import path from 'path';
+
 const app = express();
 
 app.use(cors());
@@ -34,8 +38,8 @@ app.use('/api/manager', ManagerRoute)
 // super admin 
 app.use('/api/super-admin', SuperAdminRoute)
 
-
-app.use('/callLogFile', express.static('/tmp/callLogFile'))
+const uploadPath = path.join(os.tmpdir(), 'callLogFile');
+app.use('/callLogFile', express.static(uploadPath))
 
 app.use((err, req, res, next) => {
   console.error(err)

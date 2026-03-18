@@ -12,14 +12,14 @@
 
 import multer from 'multer';
 import path from 'path';
-// const fs = require('fs');
+ 
 
 import fs from 'fs';
-
-// Ensure folder exists
-const uploadPath = '/tmp/callLogFile';
+import os from 'os';
+ 
+const uploadPath =  path.join(os.tmpdir(), 'callLogFile');
 if (!fs.existsSync(uploadPath)) {
-  fs.mkdirSync(uploadPath);
+  fs.mkdirSync(uploadPath, { recursive: true });
 }
 
 const storage = multer.diskStorage({
@@ -27,8 +27,7 @@ const storage = multer.diskStorage({
     cb(null, uploadPath);
   },
   filename: function (req, file, cb) {
-    // const uniqueName = Date.now() + '-' + file.originalname;
-    // cb(null, uniqueName);
+ 
     const ext = path.extname(file.originalname)
   const uniqueName = Date.now() + '-' + Math.round(Math.random() * 1e9) + ext
   cb(null, uniqueName)
