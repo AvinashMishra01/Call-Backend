@@ -17,7 +17,7 @@ import path from 'path';
 import fs from 'fs';
 
 // Ensure folder exists
-const uploadPath = 'callLogFile';
+const uploadPath = '/tmp/callLogFile';
 if (!fs.existsSync(uploadPath)) {
   fs.mkdirSync(uploadPath);
 }
