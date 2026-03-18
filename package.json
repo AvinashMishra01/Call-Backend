@@ -8,7 +8,9 @@
     "postinstall": "prisma generate",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/server.js",
+    "build": "prisma generate",
     "seed" : "node prisma/seed/seed.js"
+    
   },
   "author": "Avinash",
   "license": "ISC",

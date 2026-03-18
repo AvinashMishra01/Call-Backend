@@ -17,7 +17,7 @@ app.use(errorMiddleware);
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.json({ message: "Call Log API Running" });
+  res.json({ message: "API working 🚀" });
 });
 
 app.use('/api/login', loginRoute)
