@@ -64,6 +64,7 @@ export const loginAdmin = asyncHandler(async (req, res) => {
   res.json({
     success: true,
     orgRole: user.orgRole,
+    userId: user?.id,
      token: generateToken({
     id: user.id,
     orgRole: user.orgRole,
