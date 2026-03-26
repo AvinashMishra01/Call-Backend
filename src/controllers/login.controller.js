@@ -63,7 +63,7 @@ export const loginAdmin = asyncHandler(async (req, res) => {
   
   res.json({
     success: true,
-    orgRole: user.orgRole
+    orgRole: user.orgRole,
      token: generateToken({
     id: user.id,
     orgRole: user.orgRole,
@@ -96,7 +96,7 @@ export const loginSuperAdmin = asyncHandler(async(req,res)=>{
 
   res.json({
     success: true,
-    orgRole: user.orgRole
+    orgRole: user.orgRole,
      token: generateToken({
     id: user.id,
     orgRole: user.platformRole,
